@@ -1,0 +1,20 @@
+{
+  "name": "captcha-mail",
+  "version": "1.0.1",
+  "description": "send chapcha mail to assigned email",
+  "main": "index.js",
+  "author": "Justino Chow <zhou78620051@126.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "bluebird": "^3.5.1",
+    "config": "^1.30.0",
+    "is": "^3.2.1",
+    "log4js": "^2.8.0",
+    "pomelo-logger": "^0.1.7",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+  }
+}

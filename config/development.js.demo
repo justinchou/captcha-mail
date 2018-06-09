@@ -1,0 +1,17 @@
+module.exports = {
+  captcha: {
+    apikey:          'SG.**** API KEY FROM SendGrid https://sendgrid.com/',
+    randomStrSource: '1234567890',
+    cachePrefix:     's_captchaCachePrefix:',
+    template: {
+      subject: 'WumingXiaozu.com Registry Captcha',
+      sender:  'wumingxiaozu@wumingxiaozu.com',
+      text:    'Your Captcha Is <strong>${captcha}</strong>', 
+      html:    'Registry Captcha <strong>${captcha}</strong> From WumingXiaozu.com, Please Enter Into Login Box.',
+    },
+    redis: {
+      host: '127.0.0.1',
+      port: 6379
+    }
+  }
+}
