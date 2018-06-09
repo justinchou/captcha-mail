@@ -59,7 +59,8 @@ const captcha = await captchaIns.generateCaptcha(email, 6);
 console.log('My Captcha Is %s', captcha);
 
 // Send Email To Receiver.
-MailSender.sendCaptcha(email, captcha);
+const mailSenderIns = new MailSender(config.captcha).init();
+mailSenderIns.sendCaptcha(email, captcha);
 ```
 
 #### When Validate The Captcha

@@ -10,12 +10,13 @@ const logger     = Logger.getLogger('captcha-mail');
   const email = config.captcha.template.sender;
 
   const captchaIns = new Captcha(config.captcha).init();
+  const mailSenderIns = new MailSender(config.captcha).init();
 
   // Genetate Captcha
   const captcha = await captchaIns.generateCaptcha(email, 6);
   logger.debug('My Captcha Is %s', captcha);
 
-  MailSender.sendCaptcha(email, captcha);
+  mailSenderIns.sendCaptcha(email, captcha);
 
   // Validate Captcha
   const valid = await captchaIns.validateCaptcha(email, captcha);
