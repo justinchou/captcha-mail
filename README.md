@@ -9,7 +9,7 @@ Captcha Mail Sender
 const {MailSender, Captcha} = require('captcha-mail');
 ```
 
-### Do The Config
+### Do The Config Settings
 
 The Required Config As Bellow:
 
@@ -17,6 +17,7 @@ The Required Config As Bellow:
 const config = {
   apikey:          'SG.*** Your SendGrid API Key See: https://sendgrid.com/',
   randomStrSource: '1234567890',
+  cachePrefix:     's_captchaCachePrefix:',
   template: {
     subject: 'WumingXiaozu.com Registry Captcha',
     sender:  'wumingxiaozu@wumingxiaozu.com',
@@ -32,10 +33,11 @@ const config = {
 
 * apikey: string, send grid mail private key, get it from here: https://sendgrid.com/
 * randomStrSource: string, from which we generate the captcha.
+* cachePrefix: string, used for redis key prefix.
 * template: object, the email template.
 * redis: object, redis connector.
 
-NOTE: BE AWAIR OF THAT, THE **${captcha}** PART WILL BE REPLACED BY REAL CAPTCHA.
+NOTE: BE AWAIR OF THAT, THE ***${captcha}*** PART WILL BE REPLACED BY REAL CAPTCHA.
 
 ### Calling Demo
 
