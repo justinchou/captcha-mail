@@ -9,12 +9,11 @@
   "dependencies": {
     "@sendgrid/mail": "^6.2.1",
     "bluebird": "^3.5.1",
-    "config": "^1.30.0",
+    "debug": "^3.1.0",
     "is": "^3.2.1",
-    "log4js": "^2.8.0",
-    "pomelo-logger": "^0.1.7",
     "redis": "^2.8.0"
   },
   "devDependencies": {
+    "config": "^1.30.0"
   }
 }

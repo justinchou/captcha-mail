@@ -1,10 +1,8 @@
 const MailSender = require('./index').MailSender;
 const Captcha    = require('./index').Captcha;
-// const Logger     = require('log4js');
-const Logger     = require('pomelo-logger');
+const debug      = require('debug')('captcha-mail');
 
 const config     = require('config');
-const logger     = Logger.getLogger('captcha-mail');
 
 (async () => {
   const email = config.captcha.template.sender;
@@ -14,13 +12,13 @@ const logger     = Logger.getLogger('captcha-mail');
 
   // Genetate Captcha
   const captcha = await captchaIns.generateCaptcha(email, 6);
-  logger.debug('My Captcha Is %s', captcha);
+  debug('My Captcha Is %s', captcha);
 
   mailSenderIns.sendCaptcha(email, captcha);
 
   // Validate Captcha
   const valid = await captchaIns.validateCaptcha(email, captcha);
-  logger.debug('Captcha Valide Is:', valid);
+  debug('Captcha Valide Is:', valid);
 
   process.nextTick(() => {
     captchaIns.destroy();
