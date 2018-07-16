@@ -85,7 +85,7 @@ console.log('Captcha Validate Is:', valid);
 ## Release Log
 
 
-**--- 2018-06-09 --- v1.1.2 **
+**--- 2018-06-09 --- v1.1.3 **
 
 Add Expire Support For Captcha.
 
