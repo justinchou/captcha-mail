@@ -81,3 +81,20 @@ const valid = await captchaIns.validateCaptcha(email, captcha);
 console.log('Captcha Validate Is:', valid);
 ```
 
+
+## Release Log
+
+
+**--- 2018-06-09 --- v1.1.2 **
+
+Add Expire Support For Captcha.
+
+
+**--- 2018-06-09 --- v1.1.1 **
+
+Change mail send object as a class, easier to use. 
+
+
+**--- 2018-06-09 --- v1.0.1 **
+
+Finish basic usage of mail sent, captcha generation 
