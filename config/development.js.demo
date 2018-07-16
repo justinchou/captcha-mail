@@ -3,6 +3,7 @@ module.exports = {
     apikey:          'SG.**** API KEY FROM SendGrid https://sendgrid.com/',
     randomStrSource: '1234567890',
     cachePrefix:     's_captchaCachePrefix:',
+    expireSeconds:   600,
     template: {
       subject: 'WumingXiaozu.com Registry Captcha',
       sender:  'wumingxiaozu@wumingxiaozu.com',

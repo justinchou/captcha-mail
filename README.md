@@ -18,6 +18,7 @@ const config = {
   apikey:          'SG.*** Your SendGrid API Key See: https://sendgrid.com/',
   randomStrSource: '1234567890',
   cachePrefix:     's_captchaCachePrefix:',
+  expireSeconds:   600,  
   template: {
     subject: 'WumingXiaozu.com Registry Captcha',
     sender:  'wumingxiaozu@wumingxiaozu.com',
@@ -34,6 +35,7 @@ const config = {
 * apikey: string, send grid mail private key, get it from here: https://sendgrid.com/
 * randomStrSource: string, from which we generate the captcha.
 * cachePrefix: string, used for redis key prefix.
+* expireSeconds: number, after these seconds, the captcha expired. MIN EXPIRE SECONDS is 60, any settings less than this value will be ignored, and the key never expires.
 * template: object, the email template.
 * redis: object, redis connector.
 
@@ -50,6 +52,15 @@ const email = 'wumingxiaozu@wumingxiaozu.com';
 // Init The Captcha Object
 const captchaIns = new Captcha(config).init();
 ```
+
+**WARNING**: IF You New Captcha Instance Every Time You Use, Please Destroy The Object With
+`destroy()` Method After Usage. If Not, The Connection Object Will Exist Along With The
+Application Life Time. 
+
+```js
+captchaIns.destroy();
+```
+
 
 #### When Generate Captcha And Send Email
 
